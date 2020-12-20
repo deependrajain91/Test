@@ -41,3 +41,279 @@ Identity added: /c/Users/200890918/.ssh/id_ed25519 (deependrajain91@gmail.com)
 #copy public key
 $ clip < ~/.ssh/id_ed25519.pub
 e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+
+=============
+
+
+
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ ssh-keygen -t ed25519 -C
+ssh-keygen: option requires an argument -- C
+usage: ssh-keygen [-q] [-b bits] [-C comment] [-f output_keyfile] [-m format]
+                  [-N new_passphrase] [-t dsa | ecdsa | ed25519 | rsa]
+       ssh-keygen -p [-f keyfile] [-m format] [-N new_passphrase]
+                   [-P old_passphrase]
+       ssh-keygen -i [-f input_keyfile] [-m key_format]
+       ssh-keygen -e [-f input_keyfile] [-m key_format]
+       ssh-keygen -y [-f input_keyfile]
+       ssh-keygen -c [-C comment] [-f keyfile] [-P passphrase]
+       ssh-keygen -l [-v] [-E fingerprint_hash] [-f input_keyfile]
+       ssh-keygen -B [-f input_keyfile]
+       ssh-keygen -D pkcs11
+       ssh-keygen -F hostname [-lv] [-f known_hosts_file]
+       ssh-keygen -H [-f known_hosts_file]
+       ssh-keygen -R hostname [-f known_hosts_file]
+       ssh-keygen -r hostname [-g] [-f input_keyfile]
+       ssh-keygen -G output_file [-v] [-b bits] [-M memory] [-S start_point]
+       ssh-keygen -f input_file -T output_file [-v] [-a rounds] [-J num_lines]
+                  [-j start_line] [-K checkpt] [-W generator]
+       ssh-keygen -I certificate_identity -s ca_key [-hU] [-D pkcs11_provider]
+                  [-n principals] [-O option] [-V validity_interval]
+                  [-z serial_number] file ...
+       ssh-keygen -L [-f input_keyfile]
+       ssh-keygen -A [-f prefix_path]
+       ssh-keygen -k -f krl_file [-u] [-s ca_public] [-z version_number]
+                  file ...
+       ssh-keygen -Q -f krl_file file ...
+       ssh-keygen -Y check-novalidate -n namespace -s signature_file
+       ssh-keygen -Y sign -f key_file -n namespace file ...
+       ssh-keygen -Y verify -f allowed_signers_file -I signer_identity
+                -n namespace -s signature_file [-r revocation_file]
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ ssh-keygen -t ed25519 -C "deependrajain91@gmail.com"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/Users/200890918/.ssh/id_ed25519):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/200890918/.ssh/id_ed25519.
+Your public key has been saved in /c/Users/200890918/.ssh/id_ed25519.pub.
+The key fingerprint is:
+SHA256:2Xr3yF/j/q4/JbLrsejEUZXSQ86g6LtnNpEHQeCk/OU deependrajain91@gmail.com
+The key's randomart image is:
++--[ED25519 256]--+
+|        oo. .oo. |
+|     . + ....=+  |
+|      o o o...o. |
+|       o =..     |
+|        S Eo     |
+|         +o.o . .|
+|        o +ooo oo|
+|         +=+.=.o.|
+|        .=oo*o=**|
++----[SHA256]-----+
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ #
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ eval $(ssh-keygen -s)
+ssh-keygen: option requires an argument -- s
+usage: ssh-keygen [-q] [-b bits] [-C comment] [-f output_keyfile] [-m format]
+                  [-N new_passphrase] [-t dsa | ecdsa | ed25519 | rsa]
+       ssh-keygen -p [-f keyfile] [-m format] [-N new_passphrase]
+                   [-P old_passphrase]
+       ssh-keygen -i [-f input_keyfile] [-m key_format]
+       ssh-keygen -e [-f input_keyfile] [-m key_format]
+       ssh-keygen -y [-f input_keyfile]
+       ssh-keygen -c [-C comment] [-f keyfile] [-P passphrase]
+       ssh-keygen -l [-v] [-E fingerprint_hash] [-f input_keyfile]
+       ssh-keygen -B [-f input_keyfile]
+       ssh-keygen -D pkcs11
+       ssh-keygen -F hostname [-lv] [-f known_hosts_file]
+       ssh-keygen -H [-f known_hosts_file]
+       ssh-keygen -R hostname [-f known_hosts_file]
+       ssh-keygen -r hostname [-g] [-f input_keyfile]
+       ssh-keygen -G output_file [-v] [-b bits] [-M memory] [-S start_point]
+       ssh-keygen -f input_file -T output_file [-v] [-a rounds] [-J num_lines]
+                  [-j start_line] [-K checkpt] [-W generator]
+       ssh-keygen -I certificate_identity -s ca_key [-hU] [-D pkcs11_provider]
+                  [-n principals] [-O option] [-V validity_interval]
+                  [-z serial_number] file ...
+       ssh-keygen -L [-f input_keyfile]
+       ssh-keygen -A [-f prefix_path]
+       ssh-keygen -k -f krl_file [-u] [-s ca_public] [-z version_number]
+                  file ...
+       ssh-keygen -Q -f krl_file file ...
+       ssh-keygen -Y check-novalidate -n namespace -s signature_file
+       ssh-keygen -Y sign -f key_file -n namespace file ...
+       ssh-keygen -Y verify -f allowed_signers_file -I signer_identity
+                -n namespace -s signature_file [-r revocation_file]
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ eval $(ssh-agent -s)
+Agent pid 181
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ ssh-add ~/.ssh/id_ed25519
+Identity added: /c/Users/200890918/.ssh/id_ed25519 (deependrajain91@gmail.com)
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ clip < ~/.ssh/id_ed25519.pub
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ clip
+      6 [sig] bash 193! sigpacket::process: Suppressing signal 18 to win32 process (pid 15000)
+
+6201224 [sig] bash 193! sigpacket::process: Suppressing signal 18 to win32 process (pid 15000)
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ clip < ~/.ssh/id_ed25519.pub
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ ^C
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ dir
+__pycache__  1st_day_environment_setup_vscode.txt  flask1.py  flask2.py  Linking_github_with_local.txt  Saving_ML_Models  templates
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ clip < ~/.ssh/id_ed25519.pub
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ ls -al
+total 42
+drwxr-xr-x 1 e_djain 1049089     0 Dec 20 16:20 ./
+drwxr-xr-x 1 e_djain 1049089     0 Dec 17 20:14 ../
+drwxr-xr-x 1 e_djain 1049089     0 Dec 18 09:06 __pycache__/
+-rw-r--r-- 1 e_djain 1049089 25899 Dec 16 13:24 1st_day_environment_setup_vscode.txt
+-rw-r--r-- 1 e_djain 1049089   136 Dec 18 09:11 flask1.py
+-rw-r--r-- 1 e_djain 1049089   173 Dec 18 09:37 flask2.py
+-rw-r--r-- 1 e_djain 1049089  1328 Dec 20 16:28 Linking_github_with_local.txt
+drwxr-xr-x 1 e_djain 1049089     0 Dec 18 08:26 Saving_ML_Models/
+drwxr-xr-x 1 e_djain 1049089     0 Dec 18 09:17 templates/
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ git init
+Initialized empty Git repository in C:/Users/200890918/Desktop/DS_learnBay/Google Deployment/.git/
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ ls -al
+total 46
+drwxr-xr-x 1 e_djain 1049089     0 Dec 20 16:34 ./
+drwxr-xr-x 1 e_djain 1049089     0 Dec 17 20:14 ../
+drwxr-xr-x 1 e_djain 1049089     0 Dec 20 16:34 .git/
+drwxr-xr-x 1 e_djain 1049089     0 Dec 18 09:06 __pycache__/
+-rw-r--r-- 1 e_djain 1049089 25899 Dec 16 13:24 1st_day_environment_setup_vscode.txt
+-rw-r--r-- 1 e_djain 1049089   136 Dec 18 09:11 flask1.py
+-rw-r--r-- 1 e_djain 1049089   173 Dec 18 09:37 flask2.py
+-rw-r--r-- 1 e_djain 1049089  1328 Dec 20 16:28 Linking_github_with_local.txt
+drwxr-xr-x 1 e_djain 1049089     0 Dec 18 08:26 Saving_ML_Models/
+drwxr-xr-x 1 e_djain 1049089     0 Dec 18 09:17 templates/
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ git remote add origin https://github.com/deependrajain91/Test.git
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ ls -al
+total 46
+drwxr-xr-x 1 e_djain 1049089     0 Dec 20 16:34 ./
+drwxr-xr-x 1 e_djain 1049089     0 Dec 17 20:14 ../
+drwxr-xr-x 1 e_djain 1049089     0 Dec 20 16:34 .git/
+drwxr-xr-x 1 e_djain 1049089     0 Dec 18 09:06 __pycache__/
+-rw-r--r-- 1 e_djain 1049089 25899 Dec 16 13:24 1st_day_environment_setup_vscode.txt
+-rw-r--r-- 1 e_djain 1049089   136 Dec 18 09:11 flask1.py
+-rw-r--r-- 1 e_djain 1049089   173 Dec 18 09:37 flask2.py
+-rw-r--r-- 1 e_djain 1049089  1328 Dec 20 16:28 Linking_github_with_local.txt
+drwxr-xr-x 1 e_djain 1049089     0 Dec 18 08:26 Saving_ML_Models/
+drwxr-xr-x 1 e_djain 1049089     0 Dec 18 09:17 templates/
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        1st_day_environment_setup_vscode.txt
+        Linking_github_with_local.txt
+        Saving_ML_Models/
+        __pycache__/
+        flask1.py
+        flask2.py
+        templates/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ git add .
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   1st_day_environment_setup_vscode.txt
+        new file:   Linking_github_with_local.txt
+        new file:   Saving_ML_Models/joblib/finalized_model.pkl
+        new file:   Saving_ML_Models/joblib/load_model.py
+        new file:   Saving_ML_Models/joblib/train_model.py
+        new file:   Saving_ML_Models/pickle/finalized_model.pkl
+        new file:   Saving_ML_Models/pickle/finalized_model.sav
+        new file:   Saving_ML_Models/pickle/load_model.py
+        new file:   Saving_ML_Models/pickle/train_model.py
+        new file:   __pycache__/flask.cpython-37.pyc
+        new file:   flask1.py
+        new file:   flask2.py
+        new file:   templates/index.html
+
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ git commit -m Test
+[master (root-commit) 599cf4a] Test
+ Committer: JAIN Deependra-EXT <deependra.jain-ext@alstomgroup.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 13 files changed, 773 insertions(+)
+ create mode 100644 1st_day_environment_setup_vscode.txt
+ create mode 100644 Linking_github_with_local.txt
+ create mode 100644 Saving_ML_Models/joblib/finalized_model.pkl
+ create mode 100644 Saving_ML_Models/joblib/load_model.py
+ create mode 100644 Saving_ML_Models/joblib/train_model.py
+ create mode 100644 Saving_ML_Models/pickle/finalized_model.pkl
+ create mode 100644 Saving_ML_Models/pickle/finalized_model.sav
+ create mode 100644 Saving_ML_Models/pickle/load_model.py
+ create mode 100644 Saving_ML_Models/pickle/train_model.py
+ create mode 100644 __pycache__/flask.cpython-37.pyc
+ create mode 100644 flask1.py
+ create mode 100644 flask2.py
+ create mode 100644 templates/index.html
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ git push origin master
+Enumerating objects: 19, done.
+Counting objects: 100% (19/19), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (17/17), done.
+Writing objects: 100% (19/19), 8.75 KiB | 1.09 MiB/s, done.
+Total 19 (delta 5), reused 0 (delta 0)
+remote: Resolving deltas: 100% (5/5), done.
+To https://github.com/deependrajain91/Test.git
+ * [new branch]      master -> master
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+e_djain@LINL190403967 MINGW64 ~/Desktop/DS_learnBay/Google Deployment (master)
+$
+
